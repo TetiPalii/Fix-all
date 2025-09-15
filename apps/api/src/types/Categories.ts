@@ -1,0 +1,17 @@
+export enum Categories {
+  RENOVATION = "renovation",
+  CONSTRUCTION = "construction",
+  ELECTRICITY = "electricity",
+  PLUMBING = "plumbing",
+  HEATING = "heating",
+  EARTHWORKS = "earthworks",
+  ROOFING = "roofing",
+  CARPENTRY = "carpentry",
+  PAINTING = "painting",
+  FLOORING = "flooring",
+  FENCES = "fences",
+  HANDYMAN = "handyman",
+  CLEANING = "cleaning",
+  ARCHITECTURE = "architecture",
+  OTHER = "other",
+}
