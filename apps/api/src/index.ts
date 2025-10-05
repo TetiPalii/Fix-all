@@ -2,7 +2,10 @@ import express from "express";
 import cors from "cors";
 import healthRouter from "./routes/health";
 import { connectDB } from "./db";
+import registerRouter from "./routes/register";
+import * as dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -14,6 +17,7 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api", healthRouter);
+app.use("/auth", registerRouter);
 
 async function startServer() {
   await connectDB(process.env.MONGODB_URI as string);
