@@ -11,4 +11,5 @@ export const RegisterSchema = zod.object({
   role: zod.enum(["provider", "customer"]),
   location: zod.string().min(2, "Min 2 znaki"),
 });
+
 export type RegisterData = zod.infer<typeof RegisterSchema>;

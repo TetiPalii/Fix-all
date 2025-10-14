@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import healthRouter from "./routes/health";
+import healthRouter from "./routeHandlers/health";
 import { connectDB } from "./db";
-import registerRouter from "./routes/register";
 import * as dotenv from "dotenv";
+import authRoutes from "./routes/authRoutes";
 
 dotenv.config();
 const app = express();
@@ -17,7 +17,7 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api", healthRouter);
-app.use("/auth", registerRouter);
+app.use("/auth", authRoutes);
 
 async function startServer() {
   await connectDB(process.env.MONGODB_URI as string);

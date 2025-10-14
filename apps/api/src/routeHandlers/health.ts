@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-import cors from "cors";
 
 const healthRouter = express.Router();
 healthRouter.get("/health", async (req: Request, res: Response) => {

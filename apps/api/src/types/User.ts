@@ -10,4 +10,7 @@ export interface IUser extends Document {
   avatarUrl?: string | null;
   createdAt: Date;
   updatedAt: Date;
+  verificationToken: String;
+  verificationTokenExpires: Date;
+  isVerified?: boolean;
 }
