@@ -12,4 +12,10 @@ export const RegisterSchema = zod.object({
   location: zod.string().min(2, "Min 2 znaki"),
 });
 
+export const LoginSchema = zod.object({
+  email: zod.string().email("Email is required"),
+  password: zod.string().min(8, "Min 8 znaków"),
+});
+
+export type LoginData = zod.infer<typeof LoginSchema>;
 export type RegisterData = zod.infer<typeof RegisterSchema>;

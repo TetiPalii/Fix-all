@@ -8,7 +8,11 @@ import { sendEmail } from "../utils/sendMail";
 
 const registerRouter = async (req: Request, res: Response) => {
   try {
-    console.log("Register endpoint was called");
+    const { error } = RegisterSchema.safeParse(req.body);
+
+    if (error) {
+      return res.status(400).json({ message: "Invalid request data", errors: error.issues });
+    }
 
     const parsedBody = RegisterSchema.parse(req.body);
     const existingUser = await User.findOne({ email: req.body.email });

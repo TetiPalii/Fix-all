@@ -4,6 +4,7 @@ import healthRouter from "./routeHandlers/health";
 import { connectDB } from "./db";
 import * as dotenv from "dotenv";
 import authRoutes from "./routes/authRoutes";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
 
 app.get("/", (_req, res) => {
   res.send("API działa 🚀");

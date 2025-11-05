@@ -17,6 +17,6 @@ export const sendEmail = async (email: string, token: string) => {
     to: email,
     subject: "✅ Potwierdzenie rejestracji",
     text: `Kliknij w link, aby potwierdzić swój adres e-mail: ${verificationLink}`,
-    html: `<p>Kliknij w link, aby potwierdzić swój adres e-mail:</p><a href="${verificationLink}">${verificationLink}</a>`,
+    html: `<p>Kliknij w link, aby potwierdzić swój adres e-mail:</p><a href="${verificationLink}">Link do aktywacji  konta</a>`,
   });
 };
